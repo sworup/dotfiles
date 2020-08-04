@@ -1,6 +1,8 @@
 local hyper = { "cmd", "alt", "ctrl", "shift" }hs.hotkey.bind(hyper, "0", function()
   hs.reload()
-end)hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
+end)
+
+hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
 
 hs.window.animationDuration = 0
 
@@ -30,7 +32,9 @@ end)
 
 local applicationHotkeys = {
   s = 'Google Chrome',
-  a = 'Hyper',
+  a = 'iTerm',
+  w = 'GitHub Desktop',
+  d = '4D17',
   c = 'Skype'
 }for key, app in pairs(applicationHotkeys) do
   hs.hotkey.bind(hyper, key, function()
