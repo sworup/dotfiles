@@ -4,7 +4,7 @@
       relink: true
       force: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.hammerspoon:
@@ -13,12 +13,13 @@
     ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme: ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: zsh/plugins/zsh-syntax-highlighting
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh/plugins/zsh-autosuggestions
-    ~/.fzf: 
+    ~/.fzf:
     ~/.bashrc: bashrc
     ~/.zshrc: zshrc
+    ~/.tmux: tmux
     ~/.tmux.conf: tmux.conf
     ~/.tmux.conf.local: tmux.conf.local
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [~/.fzf/install, Installing fzf]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [~/.fzf/install, Installing fzf]
