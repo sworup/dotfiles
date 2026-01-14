@@ -1,0 +1,29 @@
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+font-feature = "calt"
+font-feature = "liga"
+font-feature = "dlig"
+
+theme = "catppuccin-mocha.conf"
+
+# --- Window Styling ---
+macos-titlebar-style = hidden
+window-padding-x = 12
+window-padding-y = 12
+title = " "
+
+# --- Cursor ---
+cursor-style = block
+cursor-style-blink = true
+cursor-color = #f5e0dc
+
+# --- Mouse ---
+mouse-hide-while-typing = true
+
+# --- Integration ---
+term = xterm-256color
+confirm-close-surface = false
+
+# Add these to the bottom of the file
+background-opacity = 0.90
+background-blur-radius = 20

@@ -1,0 +1,21 @@
+*.zip
+*.tar.gz
+node_modules/
+.DS_Store
+
+.ssh/
+*.key
+.env
+
+# Ignore Zsh completion cache/dumps
+.zcompdump*
+zcompdump*
+
+# Ignore command history (contains sensitive info/tokens)
+.zsh_history
+.zsh_sessions/
+
+# Ignore the core framework binaries
+config/zsh/ohmyzsh/
+
+tmux/.config/tmux/plugins/*

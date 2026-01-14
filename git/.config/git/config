@@ -1,0 +1,68 @@
+[user]
+    name = Sworup Shakya
+    email = sworup@users.noreply.github.com
+	signingkey = /Users/sworup/.ssh/github_bitwarden.pub
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
+
+[core]
+    editor = nvim
+    ignorecase = false
+    excludesfile = ~/.config/git/.gitignore_global   # Global ignore file (useful for .DS_Store, node_modules, etc.)
+    fsmonitor = true   # Optimize speed for large repos
+    untrackedcache = true
+
+[column]
+    ui = auto
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true # Keep history linear and clean
+
+[push]
+    autoSetupRemote = true # Push the current branch to a remote branch with the same name
+    default = current
+
+[color]
+    ui = true
+
+[credential]
+    # Save passwords in macOS Keychain
+    helper = osxkeychain
+
+[alias]
+    st = status -s
+    lol = log --oneline --graph --all
+    co = checkout
+    br = branch
+    ci = commit
+    cp = cherry-pick
+
+    # Resetting
+    unstage = reset HEAD --
+    last = log -1 HEAD
+
+    # Logging (The "Graph" View)
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    
+    # Prune merged branches safely
+    gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
+
+[merge]
+    conflictstyle = zdiff3
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+  
+
+[gpg "ssh"]
+	allowedSignersFile = /Users/sworup/.ssh/allowed_signers
