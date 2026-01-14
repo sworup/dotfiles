@@ -6,6 +6,9 @@
 [gpg]
 	format = ssh
 
+[gpg "ssh"]
+	allowedSignersFile = /Users/sworup/.ssh/allowed_signers
+
 [commit]
 	gpgsign = true
 
@@ -62,7 +65,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-  
-
-[gpg "ssh"]
-	allowedSignersFile = /Users/sworup/.ssh/allowed_signers
