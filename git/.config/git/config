@@ -11,6 +11,7 @@
 
 [commit]
 	gpgsign = true
+	verbose = true
 
 [core]
     editor = nvim
@@ -22,22 +23,36 @@
 [column]
     ui = auto
 
+[branch]
+    sort = -committer-date
+
+[tag]
+    sort = version:refname
+
 [init]
     defaultBranch = main
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[push]
+    default = simple
+    autoSetupRemote = true # Push the current branch to a remote branch with the same name
+    followTags = true
 
 [pull]
     rebase = true # Keep history linear and clean
 
-[push]
-    autoSetupRemote = true # Push the current branch to a remote branch with the same name
-    default = current
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
 
 [color]
     ui = true
-
-[credential]
-    # Save passwords in macOS Keychain
-    helper = osxkeychain
 
 [alias]
     st = status -s
@@ -57,6 +72,14 @@
     # Prune merged branches safely
     gone = ! "git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
 
+[help]
+	autocorrect = prompt
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
 [merge]
     conflictstyle = zdiff3
 
@@ -65,3 +88,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[rerere]
+	enabled = true
+	autoupdate = true
