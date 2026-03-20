@@ -12,10 +12,10 @@ if [[ ! -d /opt/homebrew/opt/antidote ]]; then
 fi
 
 # Set the location for Antidote data
-ANTIDOTE_HOME="/opt/homebrew/opt/antidote/share/antidote"
+export ANTIDOTE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}/antidote"
 
-# Lazy-load antidote from its functions directory.
-fpath=(${ANTIDOTE_HOME}/functions $fpath)
+# Lazy-load antidote from its functions directory (Homebrew path)
+fpath=(/opt/homebrew/opt/antidote/share/antidote/functions $fpath)
 autoload -Uz antidote
 
 # Generate a new static file whenever .zsh_plugins.txt is updated.
@@ -76,7 +76,7 @@ alias pip="pip3"
 eval "$(fnm env --use-on-cd)"
 
 # pnpm
-export PNPM_HOME="$ZDOTDIR/pnpm"
+export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -91,3 +91,11 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+
+eval "$(fzf --zsh)"
+
+# Source z and fz scripts
+source ~/.config/zsh/completions/z.sh
+source ~/.config/zsh/completions/fz.sh
+

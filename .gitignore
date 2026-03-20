@@ -15,7 +15,14 @@ zcompdump*
 .zsh_history
 .zsh_sessions/
 
-# Ignore the core framework binaries
-config/zsh/ohmyzsh/
+# Ignore Antidote generated files
+zsh/.config/zsh/plugins.zsh
 
+# Ignore PNPM home and store
+zsh/.config/zsh/pnpm/
+
+# Ignore Zsh sessions
+zsh/.config/zsh/.zsh_sessions/
+
+# Ignore tmux plugins
 tmux/.config/tmux/plugins/*

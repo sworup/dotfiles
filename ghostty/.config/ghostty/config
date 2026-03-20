@@ -1,21 +1,27 @@
-font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+# font-family = "JetBrainsMono Nerd Font"
+font-family = "Geist Mono"
+font-size = 17
 font-feature = "calt"
 font-feature = "liga"
 font-feature = "dlig"
 
-theme = "catppuccin-mocha.conf"
+# Appearance
+theme = Gruvbox Material
+background-opacity = 0.92
+background-blur = true
+window-padding-x = 10
+window-padding-y = 5
+split-divider-color = #444444
 
 # --- Window Styling ---
-macos-titlebar-style = hidden
-window-padding-x = 12
-window-padding-y = 12
-title = " "
+macos-titlebar-style = native
+macos-option-as-alt = true
+window-position-x = 0
+window-position-y = 0
 
 # --- Cursor ---
-cursor-style = block
+cursor-style = bar
 cursor-style-blink = true
-cursor-color = #f5e0dc
 
 # --- Mouse ---
 mouse-hide-while-typing = true
@@ -24,6 +30,14 @@ mouse-hide-while-typing = true
 term = xterm-256color
 confirm-close-surface = false
 
-# Add these to the bottom of the file
-background-opacity = 0.90
-background-blur-radius = 20
+# Behaviour
+shell-integration = detect
+copy-on-select = true
+
+# Quick terminal (the killer feature)
+keybind = global:shift+ctrl+alt+cmd+grave_accent=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-size = 70%
+quit-after-last-window-closed = true
+
+shell-integration = zsh
